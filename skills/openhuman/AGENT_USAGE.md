@@ -19,4 +19,4 @@ Do not ask the user which sub-agent to use. Pick from the touched paths and task
 If an agent supports subagents, spawn the selected subagent with the relevant file as its instruction context.
 If it does not support subagents, read the selected file into the current agent context and continue.
 
-Keep OpenHuman project outputs in the OpenHuman repo, not in `F:\Agent Skills\openhuman`.
+Keep OpenHuman project outputs in the OpenHuman repo, not in the skills directory.

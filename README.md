@@ -55,7 +55,7 @@ Install any skill into your preferred AI agent environment using the following s
 
 | Runtime Environment | Installation Target | Command / Procedure |
 | :--- | :--- | :--- |
-| **Google Antigravity** | `F:\Agent Skills\<skill-name>\SKILL.md` | Copy the skill folder into your designated skills path. |
+| **Google Antigravity** | `<skills-directory>/<skill-name>/SKILL.md` | Copy the skill folder into your designated Antigravity skills directory. |
 | **Claude Code CLI** | `~/.claude/skills/<skill-name>` | Run `claude skill add https://github.com/mehanshbarthwal-lab/universal-agent-skills/tree/main/skills/<name>` |
 | **Cursor IDE** | `.cursor/rules/<skill-name>.mdc` | Copy the SKILL.md content into your project rules directory. |
 | **ChatGPT / Custom GPT** | System Prompt or Instructions | Paste the full SKILL.md specification into your prompt configuration. |

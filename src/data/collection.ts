@@ -1,3 +1,5 @@
+import { rawSkillContents } from "./skillContents";
+
 export type EntryKind = "skill" | "tool" | "writeup" | "workflow";
 
 export type Provenance = "original" | "adapted" | "inspired" | "external" | "internal";
@@ -40,7 +42,7 @@ export function getSkillInstallation(entry: Entry) {
   if (entry.installation) return entry.installation;
   const rawUrl = `https://raw.githubusercontent.com/mehanshbarthwal-lab/universal-agent-skills/main/skills/${entry.slug}/SKILL.md`;
   return {
-    antigravity: `Copy to F:\\Agent Skills\\${entry.slug}\\SKILL.md`,
+    antigravity: `Copy to <skills-directory>/${entry.slug}/SKILL.md`,
     claudeCode: `claude skill add https://github.com/mehanshbarthwal-lab/universal-agent-skills/tree/main/skills/${entry.slug}`,
     cursor: `Save instructions to .cursor/rules/${entry.slug}.mdc`,
     chatgpt: `Paste the full SKILL.md specification into your Custom GPT or Project Instructions.`,
@@ -49,6 +51,7 @@ export function getSkillInstallation(entry: Entry) {
 }
 
 export function getSkillMdContent(entry: Entry) {
+  if (rawSkillContents[entry.slug]) return rawSkillContents[entry.slug];
   if (entry.skillMdContent) return entry.skillMdContent;
   return `# ${entry.name} Specification
 

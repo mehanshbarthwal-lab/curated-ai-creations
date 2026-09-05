@@ -102,7 +102,7 @@ Consolidate all old individual verification batch files and scratch scripts into
 
 ## Step 0 — Get the user's config
 
-Read `F:\Agent Skills\references\knowledge_base.md` to check for project-specific rules before beginning.
+Read `references/knowledge_base.md` to check for project-specific rules before beginning.
 Do not assume any of the following. Ask if not already stated in conversation (a single batch of questions is fine):
 
 - **Target file path and sheet name.** Get the exact sheet name including any trailing/leading whitespace — a mismatched sheet name is a `KeyError` waiting to happen. Confirm by listing `wb.sheetnames` rather than assuming.
@@ -213,7 +213,7 @@ Consolidate all old individual verification batch files and scratch scripts into
 
 ## Step 0 — Get the user's config
 
-Read `F:\Agent Skills\references\knowledge_base.md` to check for project-specific rules before beginning.
+Read `references/knowledge_base.md` to check for project-specific rules before beginning.
 Do not assume any of the following. Ask if not already stated in conversation (a single batch of questions is fine):
 
 - **Target file path and sheet name.** Get the exact sheet name including any trailing/leading whitespace — a mismatched sheet name is a `KeyError` waiting to happen. Confirm by listing `wb.sheetnames` rather than assuming.

@@ -5,6 +5,7 @@ import {
   ArrowUpRight,
   Check,
   Copy,
+  DownloadSimple,
   GitFork,
   LockSimple,
   ShieldCheck,
@@ -63,6 +64,18 @@ function EntryPage() {
     navigator.clipboard.writeText(text);
     setCopiedKey(key);
     setTimeout(() => setCopiedKey(null), 2000);
+  };
+
+  const downloadSkillMd = (filename: string, content: string) => {
+    const blob = new Blob([content], { type: "text/markdown;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
   };
 
   const siblings = entries
@@ -234,25 +247,39 @@ function EntryPage() {
                 {/* Tab 1: SKILL.md Spec */}
                 {activeTab === "spec" && (
                   <div className="space-y-4 pt-2">
-                    <div className="flex items-center justify-between">
-                      <span className="font-mono text-xs uppercase tracking-wider text-ink-faint">
-                        Full Instruction Specification
-                      </span>
-                      <button
-                        type="button"
-                        onClick={() => copyText("spec", skillMd)}
-                        className="inline-flex items-center gap-1.5 font-mono text-xs text-accent hover:underline"
-                      >
-                        {copiedKey === "spec" ? (
-                          <>
-                            <Check size={13} weight="bold" /> Copied Specification
-                          </>
-                        ) : (
-                          <>
-                            <Copy size={13} weight="bold" /> Copy SKILL.md
-                          </>
-                        )}
-                      </button>
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <div>
+                        <span className="font-mono text-xs uppercase tracking-wider text-ink-faint">
+                          Full Instruction Specification
+                        </span>
+                        <span className="ml-2 rounded bg-card/60 px-2 py-0.5 font-mono text-[10px] text-ink-faint border border-rule">
+                          {(entry.files || 1) > 1 ? `${entry.files} files in suite` : "Single file protocol"}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <button
+                          type="button"
+                          onClick={() => downloadSkillMd(`${entry.slug}.SKILL.md`, skillMd)}
+                          className="inline-flex items-center gap-1.5 rounded border border-accent/40 bg-accent/10 px-2.5 py-1 font-mono text-xs text-accent hover:bg-accent hover:text-background transition-all"
+                        >
+                          <DownloadSimple size={13} weight="bold" /> Download SKILL.md
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => copyText("spec", skillMd)}
+                          className="inline-flex items-center gap-1.5 font-mono text-xs text-accent hover:underline"
+                        >
+                          {copiedKey === "spec" ? (
+                            <>
+                              <Check size={13} weight="bold" /> Copied
+                            </>
+                          ) : (
+                            <>
+                              <Copy size={13} weight="bold" /> Copy SKILL.md
+                            </>
+                          )}
+                        </button>
+                      </div>
                     </div>
                     <pre className="overflow-x-auto rounded-lg border border-rule bg-card/60 p-5 font-mono text-xs leading-relaxed text-foreground whitespace-pre-wrap">
                       <code>{skillMd}</code>
@@ -350,9 +377,90 @@ function EntryPage() {
                 {/* Tab 3: CLI and Download */}
                 {activeTab === "cli" && (
                   <div className="space-y-4 pt-2">
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Download the raw specification directly via curl or clone the repository:
-                    </p>
+                    {(entry.files || 1) > 1 ? (
+                      <div className="rounded-lg border border-accent/40 bg-accent/5 p-5 space-y-3">
+                        <div className="flex items-center gap-2 font-mono text-xs font-semibold text-accent uppercase tracking-wider">
+                          Multi File Suite ({(entry.files || 1)} Total Files)
+                        </div>
+                        <p className="text-xs leading-relaxed text-foreground">
+                          This skill suite contains {(entry.files || 1)} modular components including sub agents, Python modules, templates, or schemas. While downloading SKILL.md supplies the primary orchestrator instructions, running the complete pipeline requires the entire suite directory.
+                        </p>
+                        <div className="flex flex-wrap gap-2.5 pt-1">
+                          <button
+                            type="button"
+                            onClick={() => downloadSkillMd(`${entry.slug}.SKILL.md`, skillMd)}
+                            className="inline-flex items-center gap-1.5 rounded bg-accent px-3 py-1.5 font-mono text-xs font-medium text-background hover:opacity-90 transition-opacity"
+                          >
+                            <DownloadSimple size={13} weight="bold" /> Download SKILL.md
+                          </button>
+                          <a
+                            href="https://github.com/mehanshbarthwal-lab/universal-agent-skills/archive/refs/heads/main.zip"
+                            className="inline-flex items-center gap-1.5 rounded border border-accent/40 bg-card/60 px-3 py-1.5 font-mono text-xs text-foreground hover:border-accent transition-colors"
+                          >
+                            <DownloadSimple size={13} weight="bold" /> Download Full Repository ZIP
+                          </a>
+                          <a
+                            href={`https://github.com/mehanshbarthwal-lab/universal-agent-skills/tree/main/skills/${entry.slug}`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-1.5 rounded border border-rule bg-card/40 px-3 py-1.5 font-mono text-xs text-ink-faint hover:text-foreground transition-colors"
+                          >
+                            View Suite on GitHub <ArrowUpRight size={12} weight="bold" />
+                          </a>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="rounded-lg border border-rule bg-card/40 p-5 space-y-3">
+                        <div className="flex items-center justify-between">
+                          <span className="font-mono text-xs font-semibold uppercase tracking-wider text-foreground">
+                            Single File Protocol
+                          </span>
+                          <span className="rounded bg-card/60 px-2 py-0.5 font-mono text-[10px] text-ink-faint border border-rule">
+                            Self Contained
+                          </span>
+                        </div>
+                        <p className="text-xs leading-relaxed text-muted-foreground">
+                          This skill is completely self contained within a single specification file. Downloading this file or copying the instructions provides complete functionality with zero external dependencies.
+                        </p>
+                        <div>
+                          <button
+                            type="button"
+                            onClick={() => downloadSkillMd(`${entry.slug}.SKILL.md`, skillMd)}
+                            className="inline-flex items-center gap-1.5 rounded bg-accent px-3 py-1.5 font-mono text-xs font-medium text-background hover:opacity-90 transition-opacity"
+                          >
+                            <DownloadSimple size={13} weight="bold" /> Download SKILL.md
+                          </button>
+                        </div>
+                      </div>
+                    )}
+
+                    {(entry.files || 1) > 1 && (
+                      <div className="rounded-lg border border-rule bg-card/40 p-4 space-y-2">
+                        <div className="flex items-center justify-between">
+                          <span className="font-mono text-xs uppercase tracking-wider text-ink-faint">
+                            Clone Suite via Git Sparse Checkout
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() =>
+                              copyText(
+                                "sparse",
+                                `git clone --depth 1 --filter=blob:none --sparse https://github.com/mehanshbarthwal-lab/universal-agent-skills.git\ncd universal-agent-skills\ngit sparse-checkout set skills/${entry.slug}`,
+                              )
+                            }
+                            className="font-mono text-xs text-accent hover:underline inline-flex items-center gap-1"
+                          >
+                            {copiedKey === "sparse" ? <Check size={12} weight="bold" /> : <Copy size={12} weight="bold" />}
+                            Copy Commands
+                          </button>
+                        </div>
+                        <pre className="overflow-x-auto rounded bg-background/80 p-3 font-mono text-xs text-foreground">
+                          <code>{`git clone --depth 1 --filter=blob:none --sparse https://github.com/mehanshbarthwal-lab/universal-agent-skills.git
+cd universal-agent-skills
+git sparse-checkout set skills/${entry.slug}`}</code>
+                        </pre>
+                      </div>
+                    )}
 
                     <div className="rounded-lg border border-rule bg-card/40 p-4 space-y-2">
                       <div className="flex items-center justify-between">
@@ -376,7 +484,7 @@ function EntryPage() {
                     <div className="rounded-lg border border-rule bg-card/40 p-4 space-y-2">
                       <div className="flex items-center justify-between">
                         <span className="font-mono text-xs uppercase tracking-wider text-ink-faint">
-                          Clone Repository
+                          Clone Entire Repository
                         </span>
                         <button
                           type="button"

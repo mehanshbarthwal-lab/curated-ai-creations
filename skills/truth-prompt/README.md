@@ -12,4 +12,4 @@ A shared agent skill that disciplines AI outputs to separate verified facts from
 - **Structured Output**: Clear breakdown of Answer, Confidence, Dependencies, and Unverified/Missing items.
 
 ## Installation Location
-`F:\Agent Skills\truth-prompt\SKILL.md`
+`<skills-directory>/truth-prompt/SKILL.md`
