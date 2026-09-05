@@ -77,11 +77,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "AI Skills, Agentic Tools & Writeups — Mehansh Barthwal" },
-      { name: "description", content: "A curated collection of AI agent skills, agentic tools and writeups." },
+      { title: "Universal Agent Skills: Production AI Skills and Tools by Mehansh Barthwal" },
+      {
+        name: "description",
+        content:
+          "An open source library of battle tested agent skills and tool protocols across Claude Code, Cursor, Antigravity, and Local LLMs.",
+      },
       { name: "author", content: "Mehansh Barthwal" },
-      { property: "og:title", content: "AI Skills, Agentic Tools & Writeups" },
-      { property: "og:description", content: "A curated collection of AI agent skills, agentic tools and writeups." },
+      {
+        property: "og:title",
+        content: "Universal Agent Skills: Production AI Skills and Tools by Mehansh Barthwal",
+      },
+      {
+        property: "og:description",
+        content:
+          "An open source library of battle tested agent skills and tool protocols across Claude Code, Cursor, Antigravity, and Local LLMs.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

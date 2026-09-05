@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AttributionRouteImport } from './routes/attribution'
 import { Route as EntrySlugRouteImport } from './routes/entry.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AttributionRoute = AttributionRouteImport.update({
+  id: '/attribution',
+  path: '/attribution',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EntrySlugRoute = EntrySlugRouteImport.update({
@@ -25,27 +31,31 @@ const EntrySlugRoute = EntrySlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/attribution': typeof AttributionRoute
   '/entry/$slug': typeof EntrySlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/attribution': typeof AttributionRoute
   '/entry/$slug': typeof EntrySlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/attribution': typeof AttributionRoute
   '/entry/$slug': typeof EntrySlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/entry/$slug'
+  fullPaths: '/' | '/attribution' | '/entry/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/entry/$slug'
-  id: '__root__' | '/' | '/entry/$slug'
+  to: '/' | '/attribution' | '/entry/$slug'
+  id: '__root__' | '/' | '/attribution' | '/entry/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AttributionRoute: typeof AttributionRoute
   EntrySlugRoute: typeof EntrySlugRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/attribution': {
+      id: '/attribution'
+      path: '/attribution'
+      fullPath: '/attribution'
+      preLoaderRoute: typeof AttributionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/entry/$slug': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AttributionRoute: AttributionRoute,
   EntrySlugRoute: EntrySlugRoute,
 }
 export const routeTree = rootRouteImport

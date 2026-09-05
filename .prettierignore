@@ -2,7 +2,10 @@ node_modules
 dist
 .output
 .vinxi
+skills
+adapters
 pnpm-lock.yaml
 package-lock.json
 bun.lock
 routeTree.gen.ts
+*.md

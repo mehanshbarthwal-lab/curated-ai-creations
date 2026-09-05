@@ -30,3 +30,15 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Vercel
+.vercel
+.vercel/*
+
+# Environment and secrets
+.env
+.env.*
+*.env
+*token*.txt
+*.secret
+
