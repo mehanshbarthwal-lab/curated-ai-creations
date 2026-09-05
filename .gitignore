@@ -43,3 +43,6 @@ dist-ssr
 *.secret
 
 .env*
+
+graphify-out/
+
