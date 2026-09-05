@@ -25,7 +25,50 @@ export type Entry = {
   compatibility: string[];
   tags: string[];
   files?: number;
+  skillMdContent?: string;
+  triggerPrompts?: string[];
+  installation?: {
+    antigravity?: string;
+    claudeCode?: string;
+    cursor?: string;
+    chatgpt?: string;
+    curlCommand?: string;
+  };
 };
+
+export function getSkillInstallation(entry: Entry) {
+  if (entry.installation) return entry.installation;
+  const rawUrl = `https://raw.githubusercontent.com/mehanshbarthwal-lab/universal-agent-skills/main/skills/${entry.slug}/SKILL.md`;
+  return {
+    antigravity: `Copy to F:\\Agent Skills\\${entry.slug}\\SKILL.md`,
+    claudeCode: `claude skill add https://github.com/mehanshbarthwal-lab/universal-agent-skills/tree/main/skills/${entry.slug}`,
+    cursor: `Save instructions to .cursor/rules/${entry.slug}.mdc`,
+    chatgpt: `Paste the full SKILL.md specification into your Custom GPT or Project Instructions.`,
+    curlCommand: `curl -fsSL ${rawUrl} -o SKILL.md`,
+  };
+}
+
+export function getSkillMdContent(entry: Entry) {
+  if (entry.skillMdContent) return entry.skillMdContent;
+  return `# ${entry.name} Specification
+
+## Overview
+${entry.what}
+
+## Rationale
+${entry.why}
+
+## Core Principles
+* Always verify environment constraints and dependencies before executing.
+* Enforce negative constraints and reject speculative abstractions.
+* Validate output against stated acceptance rubrics.
+
+## Execution Workflow
+1. Discovery: Map requirements and inspect active context.
+2. Decomposition: Break down the task into discrete, verifiable phases.
+3. Execution: Implement surgical changes preserving existing code architecture.
+4. Verification: Test all criteria before declaring completion.`;
+}
 
 export const KIND_LABEL: Record<EntryKind, string> = {
   skill: "Skill",

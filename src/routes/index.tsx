@@ -111,6 +111,10 @@ function Index() {
               Google Antigravity, ChatGPT, and Local LLMs.
             </p>
 
+            <p className="mt-4 font-mono text-xs text-muted-foreground">
+              <span className="text-accent font-semibold">Target Audience:</span> Useful for anyone who wants to empower their AI agents or tools with production capabilities without technical friction.
+            </p>
+
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a
                 href="https://github.com/mehanshbarthwal-lab/universal-agent-skills"
@@ -128,6 +132,15 @@ function Index() {
                 Attribution Matrix
                 <ArrowUpRight size={13} weight="bold" />
               </Link>
+              <a
+                href="https://mehanshlabs.qzz.io/universal-agent-skills"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-rule px-4 py-2.5 font-mono text-xs uppercase tracking-wider text-ink-faint transition-colors hover:text-foreground"
+              >
+                Portfolio Chronicle View
+                <ArrowUpRight size={13} weight="bold" />
+              </a>
             </div>
           </div>
 

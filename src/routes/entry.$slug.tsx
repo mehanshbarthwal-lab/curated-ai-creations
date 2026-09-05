@@ -9,7 +9,15 @@ import {
   LockSimple,
   ShieldCheck,
 } from "@phosphor-icons/react";
-import { entries, getEntry, KIND_LABEL, PROVENANCE_LABEL, type Entry } from "@/data/collection";
+import {
+  entries,
+  getEntry,
+  KIND_LABEL,
+  PROVENANCE_LABEL,
+  getSkillInstallation,
+  getSkillMdContent,
+  type Entry,
+} from "@/data/collection";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 
 export const Route = createFileRoute("/entry/$slug")({
@@ -45,20 +53,23 @@ export const Route = createFileRoute("/entry/$slug")({
 
 function EntryPage() {
   const { entry } = Route.useLoaderData();
-  const [copied, setCopied] = useState(false);
+  const [activeTab, setActiveTab] = useState<"spec" | "install" | "cli" | "triggers">("spec");
+  const [copiedKey, setCopiedKey] = useState<string | null>(null);
+
+  const installation = getSkillInstallation(entry);
+  const skillMd = getSkillMdContent(entry);
+
+  const copyText = (key: string, text: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedKey(key);
+    setTimeout(() => setCopiedKey(null), 2000);
+  };
 
   const siblings = entries
     .filter(
       (e) => (e.category === entry.category || e.kind === entry.kind) && e.slug !== entry.slug,
     )
     .slice(0, 4);
-
-  const copyInstruction = () => {
-    const textToCopy = `Load skill: ${entry.name}\nDescription: ${entry.tagline}\nSource: https://github.com/mehanshbarthwal-lab/universal-agent-skills/tree/main/skills/${entry.slug}`;
-    navigator.clipboard.writeText(textToCopy);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
 
   const isOriginal = entry.provenance === "original";
 
@@ -163,34 +174,258 @@ function EntryPage() {
               </section>
             )}
 
-            {/* How to use */}
-            {entry.howToUse && (
-              <section className="mt-10 border-t border-rule pt-8">
+            {/* Multi Runtime Specification & Setup */}
+            <section className="mt-12 border-t border-rule pt-8">
+              <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between">
                   <h2 className="font-mono text-[0.72rem] uppercase tracking-[0.18em] text-ink-faint">
-                    How to Invoke
+                    Skill Specification and Runtime Setup
                   </h2>
+                </div>
+
+                {/* Tab Navigation */}
+                <div className="flex items-center gap-2 border-b border-rule pb-2 font-mono text-xs overflow-x-auto">
                   <button
                     type="button"
-                    onClick={copyInstruction}
-                    className="inline-flex items-center gap-1.5 font-mono text-xs text-accent transition-colors hover:underline"
+                    onClick={() => setActiveTab("spec")}
+                    className={`rounded px-3 py-1.5 transition-all ${
+                      activeTab === "spec"
+                        ? "bg-accent text-background font-semibold"
+                        : "text-ink-faint hover:text-foreground"
+                    }`}
                   >
-                    {copied ? (
-                      <>
-                        <Check size={13} weight="bold" /> Copied
-                      </>
-                    ) : (
-                      <>
-                        <Copy size={13} weight="bold" /> Copy Command
-                      </>
-                    )}
+                    SKILL.md Specification
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab("install")}
+                    className={`rounded px-3 py-1.5 transition-all ${
+                      activeTab === "install"
+                        ? "bg-accent text-background font-semibold"
+                        : "text-ink-faint hover:text-foreground"
+                    }`}
+                  >
+                    AI Agent Setup
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab("cli")}
+                    className={`rounded px-3 py-1.5 transition-all ${
+                      activeTab === "cli"
+                        ? "bg-accent text-background font-semibold"
+                        : "text-ink-faint hover:text-foreground"
+                    }`}
+                  >
+                    CLI and Download
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab("triggers")}
+                    className={`rounded px-3 py-1.5 transition-all ${
+                      activeTab === "triggers"
+                        ? "bg-accent text-background font-semibold"
+                        : "text-ink-faint hover:text-foreground"
+                    }`}
+                  >
+                    Prompts and Triggers
                   </button>
                 </div>
-                <pre className="mt-4 overflow-x-auto rounded-lg border border-rule bg-card/60 p-4 font-mono text-xs text-foreground">
-                  <code>{entry.howToUse}</code>
-                </pre>
-              </section>
-            )}
+
+                {/* Tab 1: SKILL.md Spec */}
+                {activeTab === "spec" && (
+                  <div className="space-y-4 pt-2">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-xs uppercase tracking-wider text-ink-faint">
+                        Full Instruction Specification
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => copyText("spec", skillMd)}
+                        className="inline-flex items-center gap-1.5 font-mono text-xs text-accent hover:underline"
+                      >
+                        {copiedKey === "spec" ? (
+                          <>
+                            <Check size={13} weight="bold" /> Copied Specification
+                          </>
+                        ) : (
+                          <>
+                            <Copy size={13} weight="bold" /> Copy SKILL.md
+                          </>
+                        )}
+                      </button>
+                    </div>
+                    <pre className="overflow-x-auto rounded-lg border border-rule bg-card/60 p-5 font-mono text-xs leading-relaxed text-foreground whitespace-pre-wrap">
+                      <code>{skillMd}</code>
+                    </pre>
+                  </div>
+                )}
+
+                {/* Tab 2: AI Agent Setup */}
+                {activeTab === "install" && (
+                  <div className="space-y-4 pt-2">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Install this skill across your preferred AI agent environment:
+                    </p>
+
+                    <div className="space-y-3">
+                      <div className="rounded-lg border border-rule bg-card/40 p-4">
+                        <div className="flex items-center justify-between">
+                          <span className="font-mono text-xs font-semibold uppercase tracking-wider text-foreground">
+                            Google Antigravity
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => copyText("anti", installation.antigravity || "")}
+                            className="font-mono text-xs text-accent hover:underline inline-flex items-center gap-1"
+                          >
+                            {copiedKey === "anti" ? <Check size={12} weight="bold" /> : <Copy size={12} weight="bold" />}
+                            Copy Path
+                          </button>
+                        </div>
+                        <p className="mt-1 font-mono text-xs text-ink-faint">
+                          {installation.antigravity}
+                        </p>
+                      </div>
+
+                      <div className="rounded-lg border border-rule bg-card/40 p-4">
+                        <div className="flex items-center justify-between">
+                          <span className="font-mono text-xs font-semibold uppercase tracking-wider text-foreground">
+                            Claude Code CLI
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => copyText("claude", installation.claudeCode || "")}
+                            className="font-mono text-xs text-accent hover:underline inline-flex items-center gap-1"
+                          >
+                            {copiedKey === "claude" ? <Check size={12} weight="bold" /> : <Copy size={12} weight="bold" />}
+                            Copy Command
+                          </button>
+                        </div>
+                        <p className="mt-1 font-mono text-xs text-ink-faint">
+                          {installation.claudeCode}
+                        </p>
+                      </div>
+
+                      <div className="rounded-lg border border-rule bg-card/40 p-4">
+                        <div className="flex items-center justify-between">
+                          <span className="font-mono text-xs font-semibold uppercase tracking-wider text-foreground">
+                            Cursor Rules (.cursorrules)
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => copyText("cursor", installation.cursor || "")}
+                            className="font-mono text-xs text-accent hover:underline inline-flex items-center gap-1"
+                          >
+                            {copiedKey === "cursor" ? <Check size={12} weight="bold" /> : <Copy size={12} weight="bold" />}
+                            Copy
+                          </button>
+                        </div>
+                        <p className="mt-1 font-mono text-xs text-ink-faint">
+                          {installation.cursor}
+                        </p>
+                      </div>
+
+                      <div className="rounded-lg border border-rule bg-card/40 p-4">
+                        <div className="flex items-center justify-between">
+                          <span className="font-mono text-xs font-semibold uppercase tracking-wider text-foreground">
+                            ChatGPT / Custom GPT Instructions
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => copyText("gpt", skillMd)}
+                            className="font-mono text-xs text-accent hover:underline inline-flex items-center gap-1"
+                          >
+                            {copiedKey === "gpt" ? <Check size={12} weight="bold" /> : <Copy size={12} weight="bold" />}
+                            Copy Prompt
+                          </button>
+                        </div>
+                        <p className="mt-1 font-mono text-xs text-ink-faint">
+                          {installation.chatgpt}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Tab 3: CLI and Download */}
+                {activeTab === "cli" && (
+                  <div className="space-y-4 pt-2">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Download the raw specification directly via curl or clone the repository:
+                    </p>
+
+                    <div className="rounded-lg border border-rule bg-card/40 p-4 space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="font-mono text-xs uppercase tracking-wider text-ink-faint">
+                          Download via cURL
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => copyText("curl", installation.curlCommand || "")}
+                          className="font-mono text-xs text-accent hover:underline inline-flex items-center gap-1"
+                        >
+                          {copiedKey === "curl" ? <Check size={12} weight="bold" /> : <Copy size={12} weight="bold" />}
+                          Copy cURL
+                        </button>
+                      </div>
+                      <pre className="overflow-x-auto rounded bg-background/80 p-3 font-mono text-xs text-foreground">
+                        <code>{installation.curlCommand}</code>
+                      </pre>
+                    </div>
+
+                    <div className="rounded-lg border border-rule bg-card/40 p-4 space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="font-mono text-xs uppercase tracking-wider text-ink-faint">
+                          Clone Repository
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => copyText("clone", "git clone https://github.com/mehanshbarthwal-lab/universal-agent-skills.git")}
+                          className="font-mono text-xs text-accent hover:underline inline-flex items-center gap-1"
+                        >
+                          {copiedKey === "clone" ? <Check size={12} weight="bold" /> : <Copy size={12} weight="bold" />}
+                          Copy Clone
+                        </button>
+                      </div>
+                      <pre className="overflow-x-auto rounded bg-background/80 p-3 font-mono text-xs text-foreground">
+                        <code>git clone https://github.com/mehanshbarthwal-lab/universal-agent-skills.git</code>
+                      </pre>
+                    </div>
+                  </div>
+                )}
+
+                {/* Tab 4: Prompts and Triggers */}
+                {activeTab === "triggers" && (
+                  <div className="space-y-4 pt-2">
+                    <span className="font-mono text-xs uppercase tracking-wider text-ink-faint">
+                      Example Activation Prompts
+                    </span>
+                    <div className="space-y-2.5">
+                      {[
+                        `Load and apply ${entry.name} to this task`,
+                        `Execute following the ${entry.name} protocol`,
+                        `Audit this work against ${entry.name} rubrics`,
+                      ].map((prompt, i) => (
+                        <div
+                          key={i}
+                          className="flex items-center justify-between rounded-lg border border-rule bg-card/40 p-3.5"
+                        >
+                          <span className="font-mono text-xs text-foreground">{prompt}</span>
+                          <button
+                            type="button"
+                            onClick={() => copyText(`prompt-${i}`, prompt)}
+                            className="font-mono text-xs text-accent hover:underline inline-flex items-center gap-1 shrink-0 ml-3"
+                          >
+                            {copiedKey === `prompt-${i}` ? <Check size={12} weight="bold" /> : <Copy size={12} weight="bold" />}
+                            Copy
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </section>
           </div>
 
           {/* Sidebar Metadata Column */}

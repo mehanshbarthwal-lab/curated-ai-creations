@@ -1,14 +1,42 @@
+<div align="center">
+
 # Universal Agent Skills
 
-An open source library of battle tested, production grade agent skills and tool protocols designed to operate seamlessly across Claude Code, Cursor IDE, Google Antigravity, ChatGPT, and Local LLMs.
+<p><strong>Production AI agent skills and tool protocols across major runtimes</strong></p>
+
+<p>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-success.svg?style=for-the-badge" alt="License MIT" /></a>
+  <a href="#skill-catalog"><img src="https://img.shields.io/badge/Suites-33%20Cataloged-blue.svg?style=for-the-badge" alt="Suites 33 Cataloged" /></a>
+  <a href="#authorship-and-attribution"><img src="https://img.shields.io/badge/Original%20Works-14-orange.svg?style=for-the-badge" alt="Original Works 14" /></a>
+  <a href="#authorship-and-attribution"><img src="https://img.shields.io/badge/Community%20Upstream-17-purple.svg?style=for-the-badge" alt="Community Upstream 17" /></a>
+  <a href="https://universal-agent-skills.vercel.app"><img src="https://img.shields.io/badge/Showcase-Live%20Portal-emerald.svg?style=for-the-badge" alt="Live Showcase" /></a>
+</p>
+
+<p>
+  <a href="https://universal-agent-skills.vercel.app"><strong>Live Showcase Web Portal</strong></a> &nbsp;&bull;&nbsp;
+  <a href="https://mehanshlabs.qzz.io/universal-agent-skills"><strong>Portfolio Chronicle View</strong></a> &nbsp;&bull;&nbsp;
+  <a href="ATTRIBUTIONS.md"><strong>Attribution Matrix</strong></a> &nbsp;&bull;&nbsp;
+  <a href="CONTRIBUTING.md"><strong>Contributing Guide</strong></a>
+</p>
+
+<br/>
+
+<a href="https://universal-agent-skills.vercel.app">
+  <img src="assets/showcase-preview.png" alt="Universal Agent Skills Web Showcase" width="94%" style="border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.4);" />
+</a>
+
+<br/>
+<br/>
+
+</div>
 
 ---
 
 ## Overview
 
-Modern AI agents often produce generic prompt completions, unwanted code abstractions, verbose conversational filler, and hallucinated library methods. This repository provides specialized, hardened skill protocols that enforce senior engineering standards, reliable web intelligence, elegant visual design, and epistemic verification.
+Modern language models frequently generate generic conversational filler, speculative code abstractions, and hallucinated library methods. This repository delivers specialized, battle tested skill protocols that enforce senior engineering rigor, verified web intelligence, anti generic design aesthetics, and epistemic calibration.
 
-Every skill in this collection follows the Universal Agent Skill specification, ensuring compatibility across:
+Every skill follows the Universal Agent Skill specification, ensuring seamless interoperability across:
 
 * Anthropic Claude Code and Claude Desktop
 * Cursor IDE
@@ -17,177 +45,175 @@ Every skill in this collection follows the Universal Agent Skill specification, 
 * OpenClaw and Windsurf
 * Ollama, LangChain, and Local Models
 
----
-
-## Authorship and Attribution
-
-This repository values open source credit and technical honesty. Content is transparently cataloged into original engineering by Mehansh Barthwal and credited community upstreams.
-
-### Original Engineering by Mehansh Barthwal
-* **Zero Hallucination Coder**: Disciplined Discuss, Map, Decompose, Execute, Verify loop eliminating fabricated APIs. Officially merged into the upstream community repository `alirezarezvani/claude-skills` (Pull Request #870).
-* **Universal Scraping Architect**: Multi mode data extraction framework balancing Firecrawl, Python, and hybrid pipelines with token budgeting and state checkpoints.
-* **Pain Point Miner**: Consumer problem extraction system mining and verifying real complaints from forums and review threads without synthetic data.
-* **ArXivist**: Multi agent pipeline translating scientific research papers into executable codebases.
-* **Loop Until Done**: Self correcting rubric loop rewriting drafts until objective criteria are cleared.
-* **JD to Job**: Application tailoring engine translating job specifications into targeted qualifications.
-* **Resume Unrejectable**: Four stage recruitment pipeline simulating ATS parsers, keyword matrices, and XYZ rephrasing.
-* **Locality Delivery Scraper**: End to end scraping playbook for locality delivery ecosystems.
-* **IPYNB Editor**: Programmatic Jupyter Notebook cell inspection and patching utility preserving JSON schema integrity.
-* **Markdown Converter Router**: Dynamic architectural router directing documents between AnyDoc and MarkItDown.
-
-### Adapted and Community Upstreams
-* **Humanizer**: Adapted from Siqi Chen (MIT License). Cleans AI writing patterns using Wikipedia style guidelines.
-* **Stop Slop**: Adapted from Hardik Pandya (MIT License). Eliminates predictable filler during the initial generation pass.
-* **Ponytail**: Adapted from DietrichGebert (MIT License). Lazy senior developer minimalism suite auditing overengineering.
-* **Graphify**: Adapted from Safi Shamsi (Apache 2.0 / MIT). Codebase knowledge graph generator producing relational maps and Obsidian vaults.
-* **GSD Core**: Adapted from Open GSD (MIT License). Spec driven autonomous development framework featuring phased execution gates.
-* **Agent Reach**: Adapted from Agent Eyes (MIT License). Multi platform research CLI and Model Context Protocol server for fifteen networks.
-* **Agent Video**: Adapted from Bradley Bonanno (MIT License). Media intelligence tool combining yt dlp, FFmpeg, and Whisper.
-* **Frontend Slides**: Adapted from Zara Zhang (MIT License). Web presentation builder and PowerPoint to HTML slide converter.
-* **Ralph**: Adapted from snarktank (MIT License). Autonomous PRD conversion and implementation system.
-* **SkillOpt**: Adapted from Microsoft Corporation (MIT License). Agent self optimization and offline memory consolidation loop.
-* **MarkItDown**: Upstream utility by Microsoft Corporation (MIT License). Python library for document extraction.
-
-Refer to `ATTRIBUTIONS.md` for full maintainer credits, original repository URLs, and individual license texts.
-
----
-
-## Core Skill Suites
-
-### 1. Autonomous Coding and Software Engineering
-* `zero-hallucination-coder`: Disciplined coding loop enforcing full reasoning before implementation.
-* `karpathy-guidelines`: Senior developer posture emphasizing minimal surgical diffs and verified assumptions.
-* `ponytail`: Senior developer minimalism prioritizing standard libraries and eliminating premature abstractions.
-* `gsd-core`: Complete spec driven development system featuring modular phases for planning, execution, and verification.
-* `arxivist`: Multi agent research paper implementation pipeline.
-* `ipynb-editor`: Programmatic notebook cell manipulation without JSON schema breakage.
-
-### 2. High End UI and Visual Design
-* `taste-skill`: Anti slop frontend design system enforcing intentional layouts, typography balance, and elevated components.
-* `taste-skill/brandkit`: Visual identity guidelines, logo concepting boards, and luxury styling.
-* `taste-skill/gpt-taste`: Advanced GSAP motion engineering, scroll pinning, and wide editorial typography.
-* `taste-skill/minimalist-ui`: Warm monochrome aesthetics, typographic contrast, and flat bento layouts.
-* `frontend-slides`: Interactive web presentation builder converting presentation decks to responsive HTML.
-
-### 3. Web Intelligence and Research
-* `agent-reach`: Internet research, multi platform scraping, and social intelligence across fifteen platforms.
-* `pain-point-miner`: Voice of customer complaint mining system extracting authentic market friction points.
-* `universal-scraping-architect`: Resilient data harvesting pipeline integrating Firecrawl, Playwright, and BeautifulSoup.
-* `locality-delivery-scraper`: Structured restaurant data and locality market analysis.
-
-### 4. Writing, Style, and Human Voice
-* `humanizer`: Strips predictable tells, promotional adjectives, and formulaic transitions from drafts.
-* `stop-slop`: Compact prompt rule set preventing robotic cadence before text lands on the page.
-* `ai-watermarks-remover`: Technical zero width character stripping combined with conversational rewriting.
-
-### 5. Media, Orchestration, and Autonomous Loops
-* `loop-until-done`: Iterative quality rubric loop refining outputs until passing explicit bars.
-* `markdown-converter`: Format aware document extractor routing across office, PDF, and archive formats.
-* `agent-video`: Video analysis tool downloading media, extracting keyframes, and synchronizing transcripts.
-* `claude-skills-llm-council`: Multi agent debate protocol synthesizing balanced decisions from five advisors.
-* `truth-prompt`: Epistemic honesty framework strictly distinguishing verified facts from assumptions.
-* `graphify`: Codebase relationship graph constructor for structural intelligence.
+> **Target Audience**: Useful for anyone who wants to empower their AI agents or tools with production capabilities without technical friction, from independent creators to senior software engineers.
 
 ---
 
 ## Quick Start and Installation
 
-### Anthropic Claude Code
-Place skills into your project root or Claude configuration directory:
-```bash
-# Clone the repository
-git clone https://github.com/mehanshbarthwal-lab/universal-agent-skills.git
+Install any skill into your preferred AI agent environment using the following standard workflows:
 
-# Copy desired skills into your project
-cp -r universal-agent-skills/skills/zero-hallucination-coder .claude/skills/
-```
-
-### Cursor IDE
-Add skill instructions to your project rules:
-```bash
-# Add skill instructions into .cursorrules
-cat skills/zero-hallucination-coder/SKILL.md >> .cursorrules
-```
-
-### Google Antigravity
-Copy skills into your Antigravity skills repository:
-```bash
-cp -r skills/zero-hallucination-coder "F:/Agent Skills/zero-hallucination-coder"
-```
-
-### ChatGPT Custom GPTs
-Paste the contents of any `SKILL.md` directly into your Custom GPT Instructions field.
-
-### Local LLMs via Ollama
-Include the skill specification as the system prompt in your Modelfile:
-```dockerfile
-FROM llama3.3:70b
-SYSTEM """
-$(cat skills/zero-hallucination-coder/SKILL.md)
-"""
-```
-
-Refer to `adapters/` for detailed setup guides across each supported runtime environment.
+| Runtime Environment | Installation Target | Command / Procedure |
+| :--- | :--- | :--- |
+| **Google Antigravity** | `F:\Agent Skills\<skill-name>\SKILL.md` | Copy the skill folder into your designated skills path. |
+| **Claude Code CLI** | `~/.claude/skills/<skill-name>` | Run `claude skill add https://github.com/mehanshbarthwal-lab/universal-agent-skills/tree/main/skills/<name>` |
+| **Cursor IDE** | `.cursor/rules/<skill-name>.mdc` | Copy the SKILL.md content into your project rules directory. |
+| **ChatGPT / Custom GPT** | System Prompt or Instructions | Paste the full SKILL.md specification into your prompt configuration. |
+| **Direct cURL Download** | Any workspace | `curl -fsSL https://raw.githubusercontent.com/mehanshbarthwal-lab/universal-agent-skills/main/skills/<name>/SKILL.md -o SKILL.md` |
 
 ---
 
-## Repository Structure
+## Authorship and Attribution
 
-```
-├── skills/                     # Curated skill suites and modular instructions
-│   ├── zero-hallucination-coder/
-│   ├── universal-scraping-architect/
-│   ├── pain-point-miner/
-│   ├── taste-skill/
-│   └── ...
-├── adapters/                   # Setup guides for Claude, Cursor, Antigravity, Ollama
-│   ├── claude-code.md
-│   ├── cursor.md
-│   ├── antigravity.md
-│   └── local-llms-ollama.md
-├── src/                        # Interactive showcase web application
-│   ├── routes/
-│   ├── components/
-│   ├── data/collection.ts      # Catalog registry and metadata
-│   └── styles.css
-├── ATTRIBUTIONS.md             # Complete upstream credits and licenses
-├── CONTRIBUTING.md             # Contribution guidelines
-├── LICENSE                     # MIT License
-└── README.md                   # Project landing page
-```
+This repository places high value on open source transparency and honest provenance. Works are categorized into original engineering by Mehansh Barthwal, community upstreams, and methodology inspirations.
+
+### Original Engineering by Mehansh Barthwal
+
+* **Zero Hallucination Coder**: Disciplined Discuss, Map, Decompose, Execute, Verify loop eliminating fabricated APIs. Officially merged into the community repository `alirezarezvani/claude-skills` (Pull Request #870).
+* **Universal Scraping Architect**: Multi strategy web extraction framework balancing Firecrawl, Python, and hybrid pipelines with token budgeting and atomic checkpointing.
+* **Pain Point Miner**: Consumer problem extraction system capturing real customer complaints from forums and review threads with mechanical deduplication.
+* **ArXivist**: Multi agent pipeline translating scientific research papers into executable codebases and Jupyter validation notebooks.
+* **Loop Until Done**: Autonomous self evaluation loop rewriting drafts until all objective rubric criteria clear.
+* **JD to Job**: Career matching engine translating complex job descriptions into targeted operational qualifications.
+* **Resume Unrejectable**: Four stage recruitment pipeline simulating ATS parsers, recruiter scanning timing, and executive depth.
+* **Locality Delivery Scraper**: End to end scraping playbook for mapping locality food delivery and grocery markets.
+* **IPYNB Editor**: Programmatic Jupyter Notebook cell inspection and patching utility preserving JSON schema integrity.
+* **Markdown Converter Router**: Dynamic architectural router directing documents across AnyDoc and MarkItDown.
+
+### Adapted Open Source Projects
+
+* **Humanizer**: Authored by Siqi Chen (MIT License). Cleans machine writing hallmarks using Wikipedia style guides.
+* **Stop Slop**: Authored by Hardik Pandya (MIT License). Blocks formulaic transitions and robotic filler during initial generation.
+* **Ponytail**: Authored by DietrichGebert (MIT License). Senior developer minimalism suite auditing speculative abstractions.
+* **Graphify**: Authored by Safi Shamsi (Apache 2.0 / MIT). Codebase knowledge graph generator producing relational maps and structural reports.
+* **GSD Core**: Authored by Open GSD (MIT License). Spec driven autonomous development framework featuring phased execution gates.
+* **Agent Reach**: Authored by Agent Eyes (MIT License). Multi platform research CLI and Model Context Protocol server for fifteen networks.
+* **Agent Video**: Authored by Bradley Bonanno (MIT License). Media intelligence tool combining yt dlp, FFmpeg, and Whisper.
+* **Frontend Slides**: Authored by Zara Zhang (MIT License). Interactive web presentation builder and PowerPoint to HTML slide converter.
+* **Ralph**: Authored by snarktank (MIT License). Autonomous PRD conversion and implementation system.
+* **SkillOpt**: Developed by Microsoft Corporation (MIT License). Agent self optimization and offline memory consolidation loop.
+* **MarkItDown**: Utility by Microsoft Corporation (MIT License). Python library for multi format document extraction.
+
+### Methodology Inspirations
+
+* **LLM Council**: Multi persona deliberation methodology inspired by Andrej Karpathy.
+* **Karpathy Guidelines**: Four lightweight coding instincts distilled from observations by Andrej Karpathy.
+* **Taste Skill**: Modern anti slop frontend design guidelines enforcing typographic contrast.
+* **Truth Prompt**: Epistemic calibration protocol separating verified fact from speculative inference.
+
+Refer to [`ATTRIBUTIONS.md`](ATTRIBUTIONS.md) for full license notices, upstream URLs, and maintainer details.
 
 ---
 
-## Running the Showcase Website
+## Skill Catalog
 
-The interactive web portal allows developers to browse skills, review triggers, copy prompts, and inspect upstream attributions.
+<details open>
+<summary><strong>1. Autonomous Coding and Software Engineering</strong></summary>
 
-```bash
-# Install dependencies
-npm install
+| Skill | Category | Provenance | Description | Source |
+| :--- | :--- | :--- | :--- | :--- |
+| **Zero Hallucination Coder** | Coding | Original by Mehansh | Enforces verified reasoning before any code is generated | [`skills/zero-hallucination-coder`](skills/zero-hallucination-coder) |
+| **Ponytail** | Coding | Adapted Open Source | Senior developer minimalism prioritizing standard libraries and YAGNI | [`skills/ponytail`](skills/ponytail) |
+| **IPYNB Editor** | Coding | Original by Mehansh | Programmatic notebook cell manipulation preserving JSON schema integrity | [`skills/ipynb-editor`](skills/ipynb-editor) |
+| **OpenHuman** | Coding | External Reference | Context engineering reference for the OpenHuman autonomous desktop agent | [`skills/openhuman`](skills/openhuman) |
 
-# Run development server
-npm run dev
+</details>
 
-# Build production bundle
-npm run build
-```
+<br/>
+
+<details open>
+<summary><strong>2. Web Intelligence, Scraping, and Research</strong></summary>
+
+| Skill | Category | Provenance | Description | Source |
+| :--- | :--- | :--- | :--- | :--- |
+| **Universal Scraping Architect** | Research | Original by Mehansh | Dynamic scraping strategy router with token budgeting and checkpointing | [`skills/universal-scraping-architect`](skills/universal-scraping-architect) |
+| **Pain Point Miner** | Research | Original by Mehansh | Real customer complaint extraction with mechanical deduplication | [`skills/pain-point-miner`](skills/pain-point-miner) |
+| **ArXivist** | Research | Original by Mehansh | Translates scientific research papers into runnable code repositories | [`skills/arxivist`](skills/arxivist) |
+| **Locality Delivery Scraper** | Research | Original by Mehansh | Methodology playbook for mapping urban food delivery markets | [`skills/locality-delivery-scraper`](skills/locality-delivery-scraper) |
+| **Markdown Converter Router** | Research | Original by Mehansh | Intelligent format routing across AnyDoc and MarkItDown | [`skills/markdown-converter`](skills/markdown-converter) |
+| **Agent Reach** | Research | Adapted Open Source | Unified research interface and Model Context Protocol across fifteen networks | [`skills/agent-reach`](skills/agent-reach) |
+| **Agent Video** | Research | Adapted Open Source | Transforms video recordings into structured frames and aligned transcripts | [`skills/agent-video`](skills/agent-video) |
+| **MarkItDown** | Research | Adapted Open Source | Converts PDF, Word, PowerPoint, and Excel files into clean Markdown | [`skills/markitdown`](skills/markitdown) |
+
+</details>
+
+<br/>
+
+<details open>
+<summary><strong>3. Writing, Editing, and Anti Slop Protocols</strong></summary>
+
+| Skill | Category | Provenance | Description | Source |
+| :--- | :--- | :--- | :--- | :--- |
+| **Humanizer** | Writing | Adapted Open Source | Strips robotic hallmarks and promotional padding from machine prose | [`skills/humanizer`](skills/humanizer) |
+| **Stop Slop** | Writing | Adapted Open Source | Compact prompt rules that block formulaic filler during initial generation | [`skills/stop-slop`](skills/stop-slop) |
+| **AI Watermarks Remover** | Writing | Adapted Open Source | Combines zero width character scrubbing with stylistic rephrasing | [`skills/ai-watermarks-remover`](skills/ai-watermarks-remover) |
+| **Truth Prompt** | Writing | Methodology Inspired | Epistemic calibration separating verified fact from speculative inference | [`skills/truth-prompt`](skills/truth-prompt) |
+
+</details>
+
+<br/>
+
+<details open>
+<summary><strong>4. Orchestration, Planning, and Autonomous Pipelines</strong></summary>
+
+| Skill | Category | Provenance | Description | Source |
+| :--- | :--- | :--- | :--- | :--- |
+| **Loop Until Done** | Orchestration | Original by Mehansh | Autonomous self evaluation loop rewriting drafts until rubric bars clear | [`skills/loop-until-done`](skills/loop-until-done) |
+| **GSD Core** | Orchestration | Adapted Open Source | Phase based autonomous development with user acceptance gates | [`skills/gsd-core`](skills/gsd-core) |
+| **Ralph** | Orchestration | Adapted Open Source | Converts PRDs to structured machine readable task pipelines | [`skills/ralph`](skills/ralph) |
+| **SkillOpt** | Orchestration | Adapted Open Source | Continuous skill self optimization and memory consolidation engine | [`skills/skillopt`](skills/skillopt) |
+| **LLM Council** | Orchestration | Methodology Inspired | Five persona council peer reviewing architectural decisions and tradeoffs | [`skills/claude-skills-llm-council`](skills/claude-skills-llm-council) |
+
+</details>
+
+<br/>
+
+<details open>
+<summary><strong>5. Visual Design and Presentation Engineering</strong></summary>
+
+| Skill | Category | Provenance | Description | Source |
+| :--- | :--- | :--- | :--- | :--- |
+| **Taste Skill** | Design | Adapted Open Source | Design system rules enforcing anti generic aesthetics and typographic contrast | [`skills/taste-skill`](skills/taste-skill) |
+| **Frontend Slides** | Design | Adapted Open Source | Builds animation rich HTML slide decks or converts from PowerPoint | [`skills/frontend-slides`](skills/frontend-slides) |
+
+</details>
+
+<br/>
+
+<details open>
+<summary><strong>6. Career Intelligence and Operational Positioning</strong></summary>
+
+| Skill | Category | Provenance | Description | Source |
+| :--- | :--- | :--- | :--- | :--- |
+| **JD to Job** | Career | Original by Mehansh | Extracts operational role requirements into tailored application materials | [`skills/jd-to-job`](skills/jd-to-job) |
+| **Resume Unrejectable** | Career | Original by Mehansh | Four stage evaluation gauntlet reflecting actual hiring pipelines | [`skills/resume-unrejectable`](skills/resume-unrejectable) |
+| **Happenstance Referrals** | Career | Internal Reference | Organic referral playbook and connection methodology | [`skills/happenstance-referrals`](skills/happenstance-referrals) |
+| **LinkedIn AI Outreach** | Career | Internal Reference | Non promotional executive networking and professional outreach patterns | [`skills/linkedin-ai-outreach`](skills/linkedin-ai-outreach) |
+
+</details>
+
+<br/>
+
+<details open>
+<summary><strong>7. Systems Architecture and Knowledge Management</strong></summary>
+
+| Skill | Category | Provenance | Description | Source |
+| :--- | :--- | :--- | :--- | :--- |
+| **Graphify** | Architecture | Adapted Open Source | Constructs queryable knowledge graphs from codebases and documents | [`skills/graphify`](skills/graphify) |
+| **Karpathy Guidelines** | Architecture | Methodology Inspired | Instinctual behavioral rules for disciplined agentic coding | [`skills/karpathy-guidelines`](skills/karpathy-guidelines) |
+| **Knowledge Base** | Architecture | Internal Reference | Internal operational runbook and deployment troubleshooting reference | [`skills/knowledge-base`](skills/knowledge-base) |
+| **Zapier MCP** | Architecture | Internal Reference | Model Context Protocol integration guidelines for external tools | [`skills/zapier-mcp`](skills/zapier-mcp) |
+
+</details>
 
 ---
 
 ## Contributing
 
-Contributions are warmly welcomed. Please review `CONTRIBUTING.md` for guidelines on structure, trigger declarations, validation tests, and attribution standards.
+Contributions, new skill specifications, and bug reports are warmly welcomed. Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) for full architectural guidelines, prompt engineering criteria, and attribution requirements before opening a pull request.
 
 ---
 
 ## License
 
-This project is open source under the MIT License. Upstream tools and adapted packages retain their respective licenses as detailed in `ATTRIBUTIONS.md`.
-
----
-
-## Connected Links
-
-* GitHub Repository: `https://github.com/mehanshbarthwal-lab/universal-agent-skills`
-* Portfolio: `https://mehanshlabs.qzz.io/`
+All original skill specifications and documentation authored by Mehansh Barthwal are released under the [MIT License](LICENSE). Upstream tools and adapted suites retain their respective original licenses as documented in [`ATTRIBUTIONS.md`](ATTRIBUTIONS.md).
