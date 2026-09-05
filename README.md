@@ -13,15 +13,15 @@
 </p>
 
 <p>
-  <a href="https://universal-agent-skills.vercel.app"><strong>Live Showcase Web Portal</strong></a> &nbsp;&bull;&nbsp;
-  <a href="https://mehanshlabs.qzz.io/universal-agent-skills"><strong>Portfolio Chronicle View</strong></a> &nbsp;&bull;&nbsp;
+  <a href="https://mehanshlabs.qzz.io/universal-agent-skills"><strong>Live Showcase (Portfolio)</strong></a> &nbsp;&bull;&nbsp;
+  <a href="https://universal-agent-skills.vercel.app"><strong>Dedicated Portal</strong></a> &nbsp;&bull;&nbsp;
   <a href="ATTRIBUTIONS.md"><strong>Attribution Matrix</strong></a> &nbsp;&bull;&nbsp;
   <a href="CONTRIBUTING.md"><strong>Contributing Guide</strong></a>
 </p>
 
 <br/>
 
-<a href="https://universal-agent-skills.vercel.app">
+<a href="https://mehanshlabs.qzz.io/universal-agent-skills">
   <img src="assets/showcase-preview.png" alt="Universal Agent Skills Web Showcase" width="94%" style="border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.4);" />
 </a>
 
