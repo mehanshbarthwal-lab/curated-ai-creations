@@ -195,15 +195,15 @@ export const entries: Entry[] = [
     tagline: "Translates scientific research papers into runnable code repositories.",
     what: "A six agent orchestration pipeline (Paper Parser, SIR Registry, Architecture Planner, Code Generator, Notebook Generator, Results Comparator) that converts academic PDFs into reproducible GitHub codebases.",
     why: "Reproducing paper methodologies manually involves tedious parameter extraction and code boilerplate. Schemas between stages prevent errors from compounding.",
-    provenance: "original",
-    author: "Mehansh Barthwal",
+    provenance: "adapted",
+    author: "Mehansh Barthwal (Skill) and qosi org (Original Repository)",
     attributionNotes:
-      "Original multi agent orchestration architecture designed by Mehansh Barthwal.",
+      "Agent skill implementation crafted by Mehansh Barthwal based on the original concept and repository by qosi org at https://github.com/qosi-org/arxivist.",
     license: "MIT",
-    upstreamUrl: "https://github.com/mehanshbarthwal-lab/arxivist",
+    upstreamUrl: "https://github.com/qosi-org/arxivist",
     link: {
-      href: "https://github.com/mehanshbarthwal-lab/arxivist",
-      label: "View Tool Repository",
+      href: "https://github.com/qosi-org/arxivist",
+      label: "Original Repository by qosi org",
     },
     whenToUse: [
       "Converting an arXiv paper PDF or abstract into a runnable code repository",

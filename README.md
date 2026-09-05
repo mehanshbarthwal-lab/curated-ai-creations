@@ -72,7 +72,6 @@ This repository places high value on open source transparency and honest provena
 * **Zero Hallucination Coder**: Disciplined Discuss, Map, Decompose, Execute, Verify loop eliminating fabricated APIs. Officially merged into the community repository `alirezarezvani/claude-skills` (Pull Request #870).
 * **Universal Scraping Architect**: Multi strategy web extraction framework balancing Firecrawl, Python, and hybrid pipelines with token budgeting and atomic checkpointing.
 * **Pain Point Miner**: Consumer problem extraction system capturing real customer complaints from forums and review threads with mechanical deduplication.
-* **ArXivist**: Multi agent pipeline translating scientific research papers into executable codebases and Jupyter validation notebooks.
 * **Loop Until Done**: Autonomous self evaluation loop rewriting drafts until all objective rubric criteria clear.
 * **JD to Job**: Career matching engine translating complex job descriptions into targeted operational qualifications.
 * **Resume Unrejectable**: Four stage recruitment pipeline simulating ATS parsers, recruiter scanning timing, and executive depth.
@@ -82,6 +81,7 @@ This repository places high value on open source transparency and honest provena
 
 ### Adapted Open Source Projects
 
+* **ArXivist**: Multi agent pipeline translating scientific research papers into executable codebases and Jupyter validation notebooks. Agent skill created by Mehansh Barthwal based on the original repository and concept by qosi org ([qosi-org/arxivist](https://github.com/qosi-org/arxivist)).
 * **Humanizer**: Authored by Siqi Chen (MIT License). Cleans machine writing hallmarks using Wikipedia style guides.
 * **Stop Slop**: Authored by Hardik Pandya (MIT License). Blocks formulaic transitions and robotic filler during initial generation.
 * **Ponytail**: Authored by DietrichGebert (MIT License). Senior developer minimalism suite auditing speculative abstractions.
@@ -128,7 +128,7 @@ Refer to [`ATTRIBUTIONS.md`](ATTRIBUTIONS.md) for full license notices, upstream
 | :--- | :--- | :--- | :--- | :--- |
 | **Universal Scraping Architect** | Research | Original by Mehansh | Dynamic scraping strategy router with token budgeting and checkpointing | [`skills/universal-scraping-architect`](skills/universal-scraping-architect) |
 | **Pain Point Miner** | Research | Original by Mehansh | Real customer complaint extraction with mechanical deduplication | [`skills/pain-point-miner`](skills/pain-point-miner) |
-| **ArXivist** | Research | Original by Mehansh | Translates scientific research papers into runnable code repositories | [`skills/arxivist`](skills/arxivist) |
+| **ArXivist** | Research | Adapted (Idea by qosi org) | Translates scientific research papers into runnable code repositories | [`skills/arxivist`](skills/arxivist) |
 | **Locality Delivery Scraper** | Research | Original by Mehansh | Methodology playbook for mapping urban food delivery markets | [`skills/locality-delivery-scraper`](skills/locality-delivery-scraper) |
 | **Markdown Converter Router** | Research | Original by Mehansh | Intelligent format routing across AnyDoc and MarkItDown | [`skills/markdown-converter`](skills/markdown-converter) |
 | **Agent Reach** | Research | Adapted Open Source | Unified research interface and Model Context Protocol across fifteen networks | [`skills/agent-reach`](skills/agent-reach) |

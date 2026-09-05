@@ -35,7 +35,8 @@ The following items are original tools, skills, and architectures designed and a
 ### ArXivist
 * Category: Research and Code Generation
 * Path: `skills/arxivist/SKILL.md`
-* Status: Original multi agent architecture designed by Mehansh Barthwal.
+* Status: Agent skill implementation authored by Mehansh Barthwal, inspired by and attributed to the original repository by qosi org.
+* Upstream Repository: https://github.com/qosi-org/arxivist
 * Purpose: A six agent pipeline converting scientific research papers into executable, reproducible code repositories through intermediate representations and validation loops.
 
 ### Loop Until Done

@@ -13,7 +13,10 @@ description: >
   research paper implementation tasks.
 ---
 
-# ArXivist — Multi-Agent Research-to-Code Orchestrator
+# ArXivist: Multi Agent Research to Code Orchestrator
+
+> [!NOTE]
+> **Attribution and Provenance**: This agent skill was created and structured by Mehansh Barthwal, inspired by and based on the original concept and repository by qosi org at [https://github.com/qosi-org/arxivist](https://github.com/qosi-org/arxivist).
 
 You are the **ArXivist Orchestrator**. Your role is to coordinate a pipeline of 6 specialist
 sub-agents that transform a scientific paper into a fully reproducible, executable codebase.
